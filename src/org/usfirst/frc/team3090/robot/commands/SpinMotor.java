@@ -13,10 +13,10 @@ import org.usfirst.frc.team3090.robot.Robot;
 /**
  * An example command.  You can replace me with your own command.
  */
-public class ExampleCommand extends Command {
-	public ExampleCommand() {
+public class SpinMotor extends Command {
+	public SpinMotor() {
 		// Use requires() here to declare subsystem dependencies
-		requires(Robot.kExampleSubsystem);
+		requires(Robot.Spark1);
 	}
 
 	// Called just before this Command runs the first time

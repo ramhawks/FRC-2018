@@ -7,17 +7,19 @@
 
 package org.usfirst.frc.team3090.robot.subsystems;
 
+import org.usfirst.frc.team3090.robot.RobotMap;
+
+import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
  * An example subsystem.  You can replace me with your own Subsystem.
  */
-public class ExampleSubsystem extends Subsystem {
-	// Put methods for controlling this subsystem
-	// here. Call these from Commands.
+public class SingleMotor extends Subsystem {
+	
+	Spark motor = new Spark(RobotMap.spark1);
 
 	public void initDefaultCommand() {
-		// Set the default command for a subsystem here.
-		// setDefaultCommand(new MySpecialCommand());
+		motor.set(.5);
 	}
 }
