@@ -7,9 +7,13 @@
 
 package org.usfirst.frc.team3090.robot;
 
+import org.usfirst.frc.team3090.robot.commands.SpinMotor;
+
+import org.usfirst.frc.team3090.robot.commands.*;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -18,7 +22,9 @@ import edu.wpi.first.wpilibj.XboxController;
 public class OI {
 	
 	//create xbox controllers as joysticks
-	Joystick controllerd = new Joystick(RobotMap.devon);
-	Joystick controllero = new Joystick(RobotMap.oren);
+	public Joystick controllerd = new Joystick(RobotMap.devon);
+	public Joystick controllero = new Joystick(RobotMap.oren);
+	
+	
 	
 }

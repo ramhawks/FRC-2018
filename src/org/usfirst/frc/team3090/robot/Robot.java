@@ -10,11 +10,10 @@ package org.usfirst.frc.team3090.robot;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
-import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
-import org.usfirst.frc.team3090.robot.commands.SpinMotor;
-import org.usfirst.frc.team3090.robot.subsystems.SingleMotor;
+import org.usfirst.frc.team3090.robot.subsystems.*;
+import org.usfirst.frc.team3090.robot.commands.*;
 
 
 /**
@@ -25,11 +24,13 @@ import org.usfirst.frc.team3090.robot.subsystems.SingleMotor;
  * project.
  */
 public class Robot extends TimedRobot {
-	public static SingleMotor Spark1;
-	public static OI m_oi;
-
-	Command m_autonomousCommand;
-	SendableChooser<Command> m_chooser = new SendableChooser<>();
+	
+	//subsystems
+	public static final SingleMotor singleMotor = new SingleMotor();
+	
+	public static final OI OI = new OI();
+	
+	
 
 	/**
 	 * This function is run when the robot is first started up and should be
@@ -37,10 +38,7 @@ public class Robot extends TimedRobot {
 	 */
 	@Override
 	public void robotInit() {
-		m_oi = new OI();
-		m_chooser.addDefault("Default Auto", new SpinMotor());
-		// chooser.addObject("My Auto", new MyAutoCommand());
-		SmartDashboard.putData("Auto mode", m_chooser);
+		SmartDashboard.putData("Spin Motor", new SpinMotor());
 	}
 
 	/**
@@ -71,24 +69,9 @@ public class Robot extends TimedRobot {
 	 */
 	@Override
 	public void autonomousInit() {
-		m_autonomousCommand = m_chooser.getSelected();
-
-		/*
-		 * String autoSelected = SmartDashboard.getString("Auto Selector",
-		 * "Default"); switch(autoSelected) { case "My Auto": autonomousCommand
-		 * = new MyAutoCommand(); break; case "Default Auto": default:
-		 * autonomousCommand = new ExampleCommand(); break; }
-		 */
-
-		// schedule the autonomous command (example)
-		if (m_autonomousCommand != null) {
-			m_autonomousCommand.start();
-		}
-	}
-
-	/**
-	 * This function is called periodically during autonomous.
-	 */
+		
+	}	
+	
 	@Override
 	public void autonomousPeriodic() {
 		Scheduler.getInstance().run();
@@ -96,13 +79,7 @@ public class Robot extends TimedRobot {
 
 	@Override
 	public void teleopInit() {
-		// This makes sure that the autonomous stops running when
-		// teleop starts running. If you want the autonomous to
-		// continue until interrupted by another command, remove
-		// this line or comment it out.
-		if (m_autonomousCommand != null) {
-			m_autonomousCommand.cancel();
-		}
+		
 	}
 
 	/**
@@ -113,10 +90,16 @@ public class Robot extends TimedRobot {
 		Scheduler.getInstance().run();
 	}
 
+	
+	public void testInit() {
+		
+	}
+	
 	/**
 	 * This function is called periodically during test mode.
 	 */
 	@Override
 	public void testPeriodic() {
+		Scheduler.getInstance().run();
 	}
 }

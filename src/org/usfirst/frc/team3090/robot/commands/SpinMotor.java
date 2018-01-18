@@ -8,6 +8,8 @@
 package org.usfirst.frc.team3090.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 import org.usfirst.frc.team3090.robot.Robot;
 
 /**
@@ -16,7 +18,7 @@ import org.usfirst.frc.team3090.robot.Robot;
 public class SpinMotor extends Command {
 	public SpinMotor() {
 		// Use requires() here to declare subsystem dependencies
-		requires(Robot.Spark1);
+		requires(Robot.singleMotor);
 	}
 
 	// Called just before this Command runs the first time
@@ -27,6 +29,8 @@ public class SpinMotor extends Command {
 	// Called repeatedly when this Command is scheduled to run
 	@Override
 	protected void execute() {
+		Robot.singleMotor.spin(.9, Robot.OI.controllerd.getRawAxis(1));
+		SmartDashboard.putNumber("Controller Axis 1", Robot.OI.controllerd.getRawAxis(1));
 	}
 
 	// Make this return true when this Command no longer needs to run execute()

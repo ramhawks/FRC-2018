@@ -20,6 +20,11 @@ public class SingleMotor extends Subsystem {
 	Spark motor = new Spark(RobotMap.spark1);
 
 	public void initDefaultCommand() {
-		motor.set(.5);
+		
 	}
+	
+	public void spin(double speed, double input){
+		motor.set(speed * -input);
+	}
+	
 }
