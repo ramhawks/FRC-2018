@@ -15,10 +15,17 @@ package org.usfirst.frc.team3090.robot;
  */
 public class RobotMap {
 	
-	//
+	//controllers
 	public static final int devon = 0;
 	public static final int oren = 1;
 	
+	//test board motor controllers
 	public static final int spark1 = 0;
 	public static final int spark2 = 1;
+	
+	//robot drive motor controllers
+	public static final int talonFL = 10;
+	public static final int talonFR = 11;
+	public static final int talonBL = 12;
+	public static final int talonBR = 13;
 }
