@@ -30,7 +30,8 @@ public class SpinMotor extends Command {
 	@Override
 	protected void execute() {
 		Robot.singleMotor.spin(.9, Robot.OI.controllerd.getRawAxis(1));
-		SmartDashboard.putNumber("Controller Axis 1", Robot.OI.controllerd.getRawAxis(1));
+		SmartDashboard.putNumber("Controller Axis 1", -Robot.OI.controllerd.getRawAxis(1));
+		SmartDashboard.putNumber("Controller Axis O", Robot.OI.controllerd.getRawAxis(0));
 	}
 
 	// Make this return true when this Command no longer needs to run execute()

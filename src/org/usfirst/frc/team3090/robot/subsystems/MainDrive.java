@@ -1,21 +1,36 @@
 package org.usfirst.frc.team3090.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.drive.MecanumDrive;
+
 import org.usfirst.frc.team3090.robot.RobotMap;
 
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 /**
  *
  */
 public class MainDrive extends Subsystem {
 
-	//drive motor conntroller constructors
-	TalonSRX frontLeft = new TalonSRX(RobotMap.talonFL);
-	TalonSRX frontRight = new TalonSRX(RobotMap.talonFR);
-	TalonSRX backLeft = new TalonSRX(RobotMap.talonBL);
-	TalonSRX backRight = new TalonSRX(RobotMap.talonBR);
-
+	
+	
+	private MecanumDrive driveMain;
+	
+		private void DriveTrain(){
+			WPI_TalonSRX frontLeft = new WPI_TalonSRX(RobotMap.talonFL);
+			WPI_TalonSRX frontRight = new WPI_TalonSRX(RobotMap.talonFR);
+			WPI_TalonSRX backLeft = new WPI_TalonSRX(RobotMap.talonBL);
+			WPI_TalonSRX backRight = new WPI_TalonSRX(RobotMap.talonBR);
+			
+			driveMain = new MecanumDrive(frontLeft, backLeft, frontRight, backRight);
+		}
+		
+	public void mecDrive(double y, double x, double z){
+		driveMain.driveCartesian(y, x, z);
+	}
+	//drive motor controller constructors
+	
 	
 
     public void initDefaultCommand() {
