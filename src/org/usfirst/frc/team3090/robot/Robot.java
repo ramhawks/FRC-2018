@@ -28,6 +28,7 @@ public class Robot extends TimedRobot {
 	//subsystems
 	public static final SingleMotor singleMotor = new SingleMotor();
 	public static final MainDrive mainDrive = new MainDrive();
+	public static final TestTheStupidNoWorkyMotorsUgh stupidUgh = new TestTheStupidNoWorkyMotorsUgh();
 	
 	public static final OI OI = new OI();
 	
@@ -41,6 +42,7 @@ public class Robot extends TimedRobot {
 	public void robotInit() {
 		SmartDashboard.putData("Spin Motor", new SpinMotor());
 		SmartDashboard.putData("Mecanum Drive", new Mecanum_Drive());
+		SmartDashboard.putData("UGH", new SpinStupidMotor());
 	}
 
 	/**
