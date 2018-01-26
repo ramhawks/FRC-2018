@@ -21,7 +21,7 @@ public class TestTheStupidNoWorkyMotorsUgh extends Subsystem {
     }
     
     public void spinTheMotors(double input){
-    	frontLeft.set(input * .5);
+    	frontRight.set(input * .5);
     }
 }
 

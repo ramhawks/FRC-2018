@@ -28,6 +28,9 @@ public class MainDrive extends Subsystem {
 			backLeft = new WPI_TalonSRX(RobotMap.talonBL);
 			backRight = new WPI_TalonSRX(RobotMap.talonBR);
 			
+			//frontRight.setInverted(true);
+			//backRight.setInverted(true);
+			
 			driveMain = new MecanumDrive(frontLeft, backLeft, frontRight, backRight);
 		}
 		
@@ -36,13 +39,13 @@ public class MainDrive extends Subsystem {
 		SmartDashboard.putNumber("x", x);
 		SmartDashboard.putNumber("y", y);
 		SmartDashboard.putNumber("z", z);
-		if (y<.1){
+		if (Math.abs(y)<.15){
 			y = 0;
 		}
-		if (x<.1){
+		if (Math.abs(x)<.1){
 			x = 0;
 		}
-		if (z<.1){
+		if (Math.abs(z)<.1){
 			z = 0;
 		}
 		driveMain.driveCartesian(y, x, z);

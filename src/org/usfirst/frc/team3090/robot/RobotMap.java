@@ -26,6 +26,6 @@ public class RobotMap {
 	//robot drive motor controllers
 	public static final int talonFL = 10;
 	public static final int talonFR = 11;
-	public static final int talonBL = 12;
-	public static final int talonBR = 13;
+	public static final int talonBL = 13;
+	public static final int talonBR = 12;
 }
