@@ -1,33 +1,29 @@
 package org.usfirst.frc.team3090.robot.commands;
 
+import org.usfirst.frc.team3090.robot.Robot;
+
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-
-import org.usfirst.frc.team3090.robot.Robot;
 
 /**
  *
  */
-public class Mecanum_Drive extends Command {
+public class SensoryTest extends Command {
 
-	private boolean excecution;
-	
-    public Mecanum_Drive() {
-        requires(Robot.mainDrive);
+    public SensoryTest() {
+        
+    	requires(Robot.sensors);
+    	
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.mainDrive.DriveTrain();
-    
+    	Robot.sensors.setAuto();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	excecution = true;
-    	SmartDashboard.putBoolean("excecution", excecution);
-    	Robot.mainDrive.mecDrive(Robot.OI.controllerd.getRawAxis(0), -Robot.OI.controllerd.getRawAxis(1), Robot.OI.controllerd.getRawAxis(4));
-    	SmartDashboard.putNumber("the y value", Robot.OI.controllerd.getRawAxis(0));
+    	SmartDashboard.putNumber("Eyes Range", Robot.sensors.rangeOfEyes());
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -37,14 +33,10 @@ public class Mecanum_Drive extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.mainDrive.mecDrive(0, 0, 0);
-    	excecution = false;
-    	SmartDashboard.putBoolean("excecution", excecution);
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-    	Robot.mainDrive.mecDrive(0, 0, 0);
     }
 }
