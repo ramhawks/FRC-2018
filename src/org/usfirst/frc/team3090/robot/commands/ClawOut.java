@@ -7,10 +7,10 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class SpinStupidMotor extends Command {
+public class ClawOut extends Command {
 
-    public SpinStupidMotor() {
-        requires(Robot.stupidUgh);
+    public ClawOut() {
+        requires(Robot.claw);
     }
 
     // Called just before this Command runs the first time
@@ -19,7 +19,7 @@ public class SpinStupidMotor extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.stupidUgh.spinTheMotors(Robot.OI.controllerd.getRawAxis(2));
+    	Robot.claw.spitOut();
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -29,12 +29,10 @@ public class SpinStupidMotor extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.stupidUgh.spinTheMotors(0);
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-    	Robot.stupidUgh.spinTheMotors(0);
     }
 }

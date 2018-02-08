@@ -25,13 +25,18 @@ import org.usfirst.frc.team3090.robot.commands.*;
  */
 public class Robot extends TimedRobot {
 	
+	public static final OI OI = new OI();
+	
+	
 	//subsystems
 	public static final SingleMotor singleMotor = new SingleMotor();
 	public static final MainDrive mainDrive = new MainDrive();
-	public static final TestTheStupidNoWorkyMotorsUgh stupidUgh = new TestTheStupidNoWorkyMotorsUgh();
-	public static final Sensors sensors = new Sensors();
+	//public static final TestTheStupidNoWorkyMotorsUgh stupidUgh = new TestTheStupidNoWorkyMotorsUgh();
 	
-	public static final OI OI = new OI();
+	//public static final Sensors sensors = new Sensors();
+	public static final Claw claw = new Claw();
+	
+	
 	
 	
 
@@ -43,8 +48,9 @@ public class Robot extends TimedRobot {
 	public void robotInit() {
 		SmartDashboard.putData("Spin Motor", new SpinMotor());
 		SmartDashboard.putData("Mecanum Drive", new Mecanum_Drive());
-		SmartDashboard.putData("UGH", new SpinStupidMotor());
-		SmartDashboard.putData("SensoryTest", new SensoryTest());
+		//SmartDashboard.putData("UGH", new SpinStupidMotor());
+		SmartDashboard.putData("claw", new Claw());
+		//SmartDashboard.putData("SensoryTest", new SensoryTest())
 	}
 
 	/**

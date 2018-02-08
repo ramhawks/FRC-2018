@@ -10,9 +10,12 @@ package org.usfirst.frc.team3090.robot;
 import org.usfirst.frc.team3090.robot.commands.SpinMotor;
 
 import org.usfirst.frc.team3090.robot.commands.*;
+
+import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
@@ -25,6 +28,28 @@ public class OI {
 	public Joystick controllerd = new Joystick(RobotMap.devon);
 	public Joystick controllero = new Joystick(RobotMap.oren);
 	
+	//private JoystickButton clawIn = new JoystickButton(controllerd, 0)
+	//private JoystickButton clawOut = new JoystickButton(controllerd, 3);
 	
+	/*public void incrementation(double increment, double min, double max){
+		
+		double value = min;
+		
+		if (controllerd.getRawButtonPressed(0) && value < max){
+			value += increment;
+		}
+		if (controllerd.getRawButtonPressed(3) && value < max){
+			value -= increment;
+		}
+	}*/
+	
+	//public OI(){
+		//clawIn.whileHeld(new ClawIn());
+		//clawOut.whileHeld(new ClawOut());
+	//}
+	
+	public void warning(String mark){
+		DriverStation.reportError(mark, true);
+	}
 	
 }

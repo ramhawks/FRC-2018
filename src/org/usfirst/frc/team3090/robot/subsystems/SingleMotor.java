@@ -22,7 +22,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class SingleMotor extends Subsystem {
 	
 	//make the test motor
-	Spark motor = new Spark(RobotMap.spark2);
+	//Spark motor = new Spark(RobotMap.spark2);
 	
 	//make the encoder
 	Encoder howSpinny = new Encoder(0, 1, false, Encoder.EncodingType.k4X);
@@ -37,7 +37,7 @@ public class SingleMotor extends Subsystem {
 	
 	//spin function for quick tests
 	public void spin(double speed, double input){
-		motor.set(speed * -input);
+		//motor.set(speed * -input);
 		SmartDashboard.putNumber("How Spinny?", howSpinny.get());
 		SmartDashboard.putNumber("How Rotations?", (double)howSpinny.get() / 20);
 	}
