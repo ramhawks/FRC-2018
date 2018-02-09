@@ -12,6 +12,9 @@ public class Mecanum_Drive extends Command {
 
 	private boolean excecution;
 	
+	//set the speed for the mec drive
+	double driveSpeed = .5;
+	
     public Mecanum_Drive() {
         requires(Robot.mainDrive);
     }
@@ -26,7 +29,7 @@ public class Mecanum_Drive extends Command {
     protected void execute() {
     	excecution = true;
     	SmartDashboard.putBoolean("excecution", excecution);
-    	Robot.mainDrive.mecDrive(Robot.OI.controllerd.getRawAxis(0), -Robot.OI.controllerd.getRawAxis(1), Robot.OI.controllerd.getRawAxis(4));
+    	Robot.mainDrive.mecDrive(Robot.OI.controllerd.getRawAxis(0) * driveSpeed, -Robot.OI.controllerd.getRawAxis(1) * driveSpeed, Robot.OI.controllerd.getRawAxis(4) * driveSpeed);
     	SmartDashboard.putNumber("the y value", Robot.OI.controllerd.getRawAxis(0));
     }
 
@@ -47,4 +50,5 @@ public class Mecanum_Drive extends Command {
     protected void interrupted() {
     	Robot.mainDrive.mecDrive(0, 0, 0);
     }
+   
 }

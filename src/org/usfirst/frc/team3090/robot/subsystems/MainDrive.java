@@ -5,6 +5,7 @@ import edu.wpi.first.wpilibj.drive.MecanumDrive;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team3090.robot.RobotMap;
+import org.usfirst.frc.team3090.robot.commands.Mecanum_Drive;
 
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
@@ -56,12 +57,22 @@ public class MainDrive extends Subsystem {
 	
 
     public void initDefaultCommand() {
-        // Set the default command for a subsystem here.
-        //setDefaultCommand(new MySpecialCommand());
+        setDefaultCommand(new Mecanum_Drive());
     }
     
-    public void drive(double speed){
-    	
+    public void seperateMotors(boolean inFL, boolean inFR, boolean inBL, boolean inBR){
+    	if(inFL){
+    		frontLeft.set(.5);
+    	}
+    	if(inFR){
+    		frontRight.set(.5);
+    	}
+    	if(inBL){
+    		backLeft.set(.5);
+    	}
+    	if(inBR){
+    		backRight.set(.5);
+    	}
     }
 }
 

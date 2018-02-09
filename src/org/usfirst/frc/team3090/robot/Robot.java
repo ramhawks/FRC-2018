@@ -25,7 +25,7 @@ import org.usfirst.frc.team3090.robot.commands.*;
  */
 public class Robot extends TimedRobot {
 	
-	public static final OI OI = new OI();
+	
 	
 	
 	//subsystems
@@ -36,8 +36,8 @@ public class Robot extends TimedRobot {
 	//public static final Sensors sensors = new Sensors();
 	public static final Claw claw = new Claw();
 	
-	
-	
+	////////*****ALWAYS INIT OI AFTER SUBSYSTEMS*******///////
+	public static final OI OI = new OI();
 	
 
 	/**
@@ -47,9 +47,11 @@ public class Robot extends TimedRobot {
 	@Override
 	public void robotInit() {
 		SmartDashboard.putData("Spin Motor", new SpinMotor());
-		SmartDashboard.putData("Mecanum Drive", new Mecanum_Drive());
+		SmartDashboard.putData(claw);
+		SmartDashboard.putData(mainDrive);
+		SmartDashboard.putData("Seperate Motors", new SeperateMotors());
 		//SmartDashboard.putData("UGH", new SpinStupidMotor());
-		SmartDashboard.putData("claw", new Claw());
+		//SmartDashboard.putData("claw", new Claw());
 		//SmartDashboard.putData("SensoryTest", new SensoryTest())
 	}
 

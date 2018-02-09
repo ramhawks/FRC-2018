@@ -46,8 +46,8 @@ public class SingleMotor extends Subsystem {
 		howSpinny.reset();
 	}
 	
-	//increaseToSpin function for testing speed increasing while pressing button until set end speed
-	/*public void increaseToSpin(double endSpeed, double accelCoeff, boolean input){
+	//increaseToSpin function for testing speed incresing while pressing button until set end speed
+	/*public void increaseToSpin(double endSpeed, double accelCoeff, boolean inpt){
 		
 		double direction = Math.abs(endSpeed) / endSpeed;
 		

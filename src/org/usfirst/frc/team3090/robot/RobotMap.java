@@ -20,12 +20,15 @@ public class RobotMap {
 	public static final int oren = 1;
 	
 	//test board motor controllers
-	public static final int spark1 = 0;
-	public static final int spark2 = 1;
+	public static final int spark1 = 3;
+	public static final int spark2 = 4;
+	
+	public static final int claw_left = 0;
+	public static final int claw_right = 1;
 	
 	//robot drive motor controllers
-	public static final int talonFL = 10;
-	public static final int talonFR = 11;
-	public static final int talonBL = 13;
+	public static final int talonFL = 13;
+	public static final int talonFR = 10;
+	public static final int talonBL = 11;
 	public static final int talonBR = 12;
 }

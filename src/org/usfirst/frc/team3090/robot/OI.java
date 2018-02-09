@@ -28,8 +28,10 @@ public class OI {
 	public Joystick controllerd = new Joystick(RobotMap.devon);
 	public Joystick controllero = new Joystick(RobotMap.oren);
 	
-	//private JoystickButton clawIn = new JoystickButton(controllerd, 0)
-	//private JoystickButton clawOut = new JoystickButton(controllerd, 3);
+	
+	/////*****ADD ONE TO ALL BUTTON INDEXES****/////
+	private JoystickButton clawIn_ = new JoystickButton(controllerd, 1);
+	private JoystickButton clawOut_ = new JoystickButton(controllerd, 4);
 	
 	/*public void incrementation(double increment, double min, double max){
 		
@@ -43,10 +45,10 @@ public class OI {
 		}
 	}*/
 	
-	//public OI(){
-		//clawIn.whileHeld(new ClawIn());
-		//clawOut.whileHeld(new ClawOut());
-	//}
+	public OI(){
+		clawIn_.whileHeld(new ClawIn());
+		clawOut_.whileHeld(new ClawOut());
+	}
 	
 	public void warning(String mark){
 		DriverStation.reportError(mark, true);
