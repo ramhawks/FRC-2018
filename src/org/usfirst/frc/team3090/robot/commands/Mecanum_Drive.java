@@ -28,9 +28,9 @@ public class Mecanum_Drive extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	excecution = true;
-    	SmartDashboard.putBoolean("excecution", excecution);
+    	//SmartDashboard.putBoolean("excecution", excecution);
     	Robot.mainDrive.mecDrive(Robot.OI.controllerd.getRawAxis(0) * driveSpeed, -Robot.OI.controllerd.getRawAxis(1) * driveSpeed, Robot.OI.controllerd.getRawAxis(4) * driveSpeed);
-    	SmartDashboard.putNumber("the y value", Robot.OI.controllerd.getRawAxis(0));
+    	//SmartDashboard.putNumber("the y value", Robot.OI.controllerd.getRawAxis(0));
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -42,7 +42,7 @@ public class Mecanum_Drive extends Command {
     protected void end() {
     	Robot.mainDrive.mecDrive(0, 0, 0);
     	excecution = false;
-    	SmartDashboard.putBoolean("excecution", excecution);
+    	//SmartDashboard.putBoolean("excecution", excecution);
     }
 
     // Called when another command which requires one or more of the same

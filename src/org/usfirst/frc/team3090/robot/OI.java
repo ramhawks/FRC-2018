@@ -8,7 +8,7 @@
 package org.usfirst.frc.team3090.robot;
 
 import org.usfirst.frc.team3090.robot.commands.SpinMotor;
-
+import org.usfirst.frc.team3090.robot.commands.automodes.*;
 import org.usfirst.frc.team3090.robot.commands.*;
 
 import edu.wpi.first.wpilibj.DriverStation;
@@ -60,9 +60,16 @@ public class OI {
 	
 	public void autoQuery(String start, String end){
 		switch(start + end){
-		case "1Scale": 
+		case "1Scale": Robot.autoCommand = new LeftScale(); break;
+		case "1Switch": Robot.autoCommand = new LeftSwitch(); break;
+		case "1Line": Robot.autoCommand = new LeftLine(); break;
+		case "2Switch": Robot.autoCommand = new CenterSwitch(); break;
+		case "2Line":  Robot.autoCommand = new CenterLine(); break;
+		case "3Scale":  Robot.autoCommand = new RightScale(); break;
+		case "3Switch": Robot.autoCommand =  new RightSwitch(); break;
+		case "3Line": Robot.autoCommand =  new RightLine(); break;
+		default: Robot.autoCommand =  new NullAuto();
 		}
-		
 	}
 	
 }

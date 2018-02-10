@@ -1,6 +1,7 @@
 package org.usfirst.frc.team3090.robot.commands;
 
 import org.usfirst.frc.team3090.robot.Robot;
+import org.usfirst.frc.team3090.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -19,7 +20,7 @@ public class ScissorsUp extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.scissors.scissorsMove(-1, .5);
+    	Robot.scissors.scissorsMove(RobotMap.scissors_up_speed, RobotMap.scissors_acceleration);
     }
 
     // Make this return true when this Command no longer needs to run execute()

@@ -19,7 +19,7 @@ public class Winch extends Subsystem {
     }
     
     public void faceTheBoss(double input){
-    	winchMotor.set(input);
+    	winchMotor.set(input * RobotMap.winch_speed);
     }
 }
 

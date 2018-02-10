@@ -15,17 +15,18 @@ package org.usfirst.frc.team3090.robot;
  */
 public class RobotMap {
 	
-	//controllers
-	public static final int devon = 0;
-	public static final int oren = 1;
+	//xbox controllers								//claw speeds all positive
+	public static final int devon = 0;				public static final double claw_in_speed = .5;
+	public static final int oren = 1;				public static final double claw_out_speed = .5;
+													
+	//test board motor controllers					//scissors speeds pos and neg, acceleration positive
+	public static final int spark1 = 3;				public static final double scissors_up_speed = -1;
+	public static final int spark2 = 4;				public static final double scissors_down_speed = 1;
 	
-	//test board motor controllers
-	public static final int spark1 = 3;
-	public static final int spark2 = 4;
-	
+	/*claw motor controllers*/						public static final double scissors_acceleration = .5;
 	public static final int claw_left = 0;
-	public static final int claw_right = 1;
-	
+	public static final int claw_right = 1;			//winch speed pos or neg
+													public static final double winch_speed = 1;
 	//robot drive motor controllers
 	public static final int talonFL = 13;
 	public static final int talonFR = 10;
@@ -36,4 +37,13 @@ public class RobotMap {
 	public static final int scissor_chain = 14;
 	public static final int winch_motor = 15;
 	
+	//encoders
+	public static final int encFL_a = 0;
+	public static final int encFL_b = 1;
+	public static final int encFR_a = 2;
+	public static final int encFR_b = 3;
+	public static final int encBL_a = 4;
+	public static final int encBL_b = 5;
+	public static final int encBR_a = 6;
+	public static final int encBR_b = 7;
 }

@@ -1,17 +1,16 @@
-package org.usfirst.frc.team3090.robot.commands;
+package org.usfirst.frc.team3090.robot.commands.automodes;
 
 import org.usfirst.frc.team3090.robot.Robot;
-import org.usfirst.frc.team3090.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class ClawOut extends Command {
+public class NullAuto extends Command {
 
-    public ClawOut() {
-        requires(Robot.claw);
+    public NullAuto() {
+        requires(Robot.mainDrive);
     }
 
     // Called just before this Command runs the first time
@@ -20,7 +19,8 @@ public class ClawOut extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.claw.spitOut(RobotMap.claw_out_speed);
+    	Robot.mainDrive.mecDrive(0, 0, 0);
+    	Robot.OI.warning("Running Null Auto");
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -30,12 +30,12 @@ public class ClawOut extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.claw.spitOut(0);
+    	Robot.mainDrive.mecDrive(0, 0, 0);
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-    	Robot.claw.spitOut(0);
+    	Robot.mainDrive.mecDrive(0, 0, 0);
     }
 }

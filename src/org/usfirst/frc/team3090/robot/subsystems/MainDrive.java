@@ -36,7 +36,7 @@ public class MainDrive extends Subsystem {
 		}
 		
 	public void mecDrive(double y, double x, double z){
-		SmartDashboard.putBoolean("elihbgewoirhbgoeiwrhbgob", true);
+		//SmartDashboard.putBoolean("elihbgewoirhbgoeiwrhbgob", true);
 		SmartDashboard.putNumber("x", x);
 		SmartDashboard.putNumber("y", y);
 		SmartDashboard.putNumber("z", z);
@@ -50,7 +50,7 @@ public class MainDrive extends Subsystem {
 			z = 0;
 		}
 		driveMain.driveCartesian(y, x, z);
-		SmartDashboard.putBoolean("Finished", true);
+		//SmartDashboard.putBoolean("Finished", true);
 	}
 	//drive motor controller constructors
 	

@@ -7,6 +7,7 @@
 
 package org.usfirst.frc.team3090.robot;
 
+import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -26,8 +27,8 @@ import org.usfirst.frc.team3090.robot.commands.*;
  */
 public class Robot extends TimedRobot {
 	
-	
-	
+	public static Command autoCommand;
+	public String plates;
 	
 	//subsystems
 	public static final SingleMotor singleMotor = new SingleMotor();
@@ -76,6 +77,8 @@ public class Robot extends TimedRobot {
 		SmartDashboard.putData("Starting Position", startChooser);
 		SmartDashboard.putData("Ending Position", endChooser);
 		
+		
+		
 	}
 
 	/**
@@ -106,7 +109,9 @@ public class Robot extends TimedRobot {
 	 */
 	@Override
 	public void autonomousInit() {
-		
+		plates = DriverStation.getInstance().getGameSpecificMessage();
+		OI.autoQuery(startChooser.getSelected(), endChooser.getSelected());
+		autoCommand.start();
 	}	
 	
 	@Override
