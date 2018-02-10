@@ -17,6 +17,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import org.usfirst.frc.team3090.robot.*;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -24,14 +25,17 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class OI {
 	
+	
 	//create xbox controllers as joysticks
 	public Joystick controllerd = new Joystick(RobotMap.devon);
 	public Joystick controllero = new Joystick(RobotMap.oren);
 	
 	
 	/////*****ADD ONE TO ALL BUTTON INDEXES****/////
-	private JoystickButton clawIn_ = new JoystickButton(controllerd, 1);
-	private JoystickButton clawOut_ = new JoystickButton(controllerd, 4);
+	private JoystickButton 	clawIn_ = new JoystickButton(controllerd, 2),
+	  						clawOut_ = new JoystickButton(controllerd, 3),
+	  						scissorsUp_ = new JoystickButton(controllerd, 4),
+	  						scissorsDown_ = new JoystickButton(controllerd, 1);
 	
 	/*public void incrementation(double increment, double min, double max){
 		
@@ -51,7 +55,14 @@ public class OI {
 	}
 	
 	public void warning(String mark){
-		DriverStation.reportError(mark, true);
+		DriverStation.reportWarning(mark, true);
+	}
+	
+	public void autoQuery(String start, String end){
+		switch(start + end){
+		case "1Scale": 
+		}
+		
 	}
 	
 }

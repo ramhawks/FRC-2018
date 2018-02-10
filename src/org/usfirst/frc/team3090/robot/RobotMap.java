@@ -31,4 +31,9 @@ public class RobotMap {
 	public static final int talonFR = 10;
 	public static final int talonBL = 11;
 	public static final int talonBR = 12;
+	
+	//robot other motor controllers
+	public static final int scissor_chain = 14;
+	public static final int winch_motor = 15;
+	
 }

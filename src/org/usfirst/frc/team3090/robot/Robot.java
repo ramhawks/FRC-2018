@@ -10,6 +10,7 @@ package org.usfirst.frc.team3090.robot;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
+import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team3090.robot.subsystems.*;
@@ -35,9 +36,15 @@ public class Robot extends TimedRobot {
 	
 	//public static final Sensors sensors = new Sensors();
 	public static final Claw claw = new Claw();
+	public static final Winch winch = new Winch();
+	public static final Scissors scissors = new Scissors();
 	
 	////////*****ALWAYS INIT OI AFTER SUBSYSTEMS*******///////
 	public static final OI OI = new OI();
+	
+	//choosers
+	SendableChooser<String> startChooser = new SendableChooser<>();
+	SendableChooser<String> endChooser = new SendableChooser<>();
 	
 
 	/**
@@ -53,6 +60,22 @@ public class Robot extends TimedRobot {
 		//SmartDashboard.putData("UGH", new SpinStupidMotor());
 		//SmartDashboard.putData("claw", new Claw());
 		//SmartDashboard.putData("SensoryTest", new SensoryTest())
+		
+		//objects for starting position chooser
+		startChooser.addDefault("1", "1");
+		startChooser.addObject("2", "2");
+		startChooser.addObject("3", "3");
+		
+		//objects for end position chooser
+		endChooser.addDefault("Nicht", "Nicht");
+		endChooser.addObject("Switch", "Switch");
+		endChooser.addObject("Scale", "Scale");
+		endChooser.addObject("Line", "Line");
+		
+		//Display choosers
+		SmartDashboard.putData("Starting Position", startChooser);
+		SmartDashboard.putData("Ending Position", endChooser);
+		
 	}
 
 	/**
