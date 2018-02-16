@@ -72,4 +72,8 @@ public class OI {
 		}
 	}
 	
+	public double inchToEnc(double inches){
+		return inches / 3.17;
+	}
+	
 }

@@ -39,8 +39,8 @@ public class SpinMotor extends Command {
 		//SmartDashboard.putNumber("EndSpeed", EndSpeed);
 		//SmartDashboard.putNumber("Acceleration Coefficient", AccelCoeff);
 		
-		Robot.singleMotor.spin(.5, Robot.OI.controllerd.getRawAxis(1));
-		SmartDashboard.putNumber("Controller Axis 1", -Robot.OI.controllerd.getRawAxis(1));
+		Robot.singleMotor.spin(1, Robot.OI.controllerd.getRawAxis(3));
+		SmartDashboard.putNumber("Controller Axis 1", -Robot.OI.controllerd.getRawAxis(3));
 		SmartDashboard.putNumber("Controller Axis O", Robot.OI.controllerd.getRawAxis(0));
 		
 	}

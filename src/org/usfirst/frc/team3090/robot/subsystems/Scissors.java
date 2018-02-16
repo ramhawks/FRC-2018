@@ -1,10 +1,12 @@
 package org.usfirst.frc.team3090.robot.subsystems;
 
 import org.usfirst.frc.team3090.robot.RobotMap;
+import org.usfirst.frc.team3090.robot.commands.ScissorsUp;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import edu.wpi.first.wpilibj.DriverStation;
+import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
@@ -13,13 +15,13 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class Scissors extends Subsystem {
 
-    WPI_TalonSRX scissorChain = new WPI_TalonSRX(RobotMap.scissor_chain);
-
+    //WPI_TalonSRX scissorChain = new WPI_TalonSRX(RobotMap.scissor_chain);
+	Spark scissorChain = new Spark(RobotMap.scissor_chain);
+	
     Timer SMClock = new Timer();
     
     public void initDefaultCommand() {
-        // Set the default command for a subsystem here.
-        //setDefaultCommand(new MySpecialCommand());
+        setDefaultCommand(new ScissorsUp());
     }
     
     public void scissorsMove(double endSpeed, double accelCoeff){

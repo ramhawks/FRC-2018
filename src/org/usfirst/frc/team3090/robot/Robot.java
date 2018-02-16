@@ -58,6 +58,7 @@ public class Robot extends TimedRobot {
 		SmartDashboard.putData(claw);
 		SmartDashboard.putData(mainDrive);
 		SmartDashboard.putData("Seperate Motors", new SeperateMotors());
+		
 		//SmartDashboard.putData("UGH", new SpinStupidMotor());
 		//SmartDashboard.putData("claw", new Claw());
 		//SmartDashboard.putData("SensoryTest", new SensoryTest())

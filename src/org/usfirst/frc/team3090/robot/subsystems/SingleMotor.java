@@ -25,7 +25,7 @@ public class SingleMotor extends Subsystem {
 	//Spark motor = new Spark(RobotMap.spark2);
 	
 	//make the encoder
-	Encoder howSpinny = new Encoder(0, 1, false, Encoder.EncodingType.k4X);
+	Encoder howSpinny = new Encoder(8, 9, false, Encoder.EncodingType.k4X);
 
 	//make a timer
 	Timer SMClock = new Timer();
@@ -46,7 +46,7 @@ public class SingleMotor extends Subsystem {
 		howSpinny.reset();
 	}
 	
-	//increaseToSpin function for testing speed incresing while pressing button until set end speed
+	//increaseToSpin function for testing speed increasing while pressing button until set end speed
 	/*public void increaseToSpin(double endSpeed, double accelCoeff, boolean inpt){
 		
 		double direction = Math.abs(endSpeed) / endSpeed;
