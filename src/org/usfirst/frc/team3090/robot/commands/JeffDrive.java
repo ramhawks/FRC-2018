@@ -14,9 +14,10 @@ public class JeffDrive extends Command {
         requires(Robot.mainDrive);
     }
 
-    // Called just before this Command runs the first time
+    // Called just before this Command runs the first tim
     protected void initialize() {
     	Robot.mainDrive.DriveTrain();
+    	Robot.mainDrive.resetEncoders();
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -24,7 +25,7 @@ public class JeffDrive extends Command {
     	Robot.mainDrive.jeffDrive(-Robot.OI.controllerd.getRawAxis(1) * RobotMap.drive_speed, Robot.OI.controllerd.getRawAxis(4));
     }
 
-    // Make this return true when this Command no longer needs to run execute()
+    // Make this return true when this Command no longer needs to run execute(
     protected boolean isFinished() {
         return false;
     }

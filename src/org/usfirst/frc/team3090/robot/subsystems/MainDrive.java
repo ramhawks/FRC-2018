@@ -2,6 +2,7 @@ package org.usfirst.frc.team3090.robot.subsystems;
 
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.drive.MecanumDrive;
@@ -19,6 +20,8 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
  */
 public class MainDrive extends Subsystem {
 
+	public Timer driveClock = new Timer();
+	
 	private WPI_TalonSRX frontLeft;
 	private WPI_TalonSRX frontRight;
 	private WPI_TalonSRX backLeft;
@@ -69,7 +72,11 @@ public class MainDrive extends Subsystem {
 	
 	public void jeffDrive(double x, double turn){
 		tankDrive.arcadeDrive(x, turn);
-		SmartDashboard.putNumber("xval", x);
+		SmartDashboard.putNumber("speed", Math.abs(x));
+		SmartDashboard.putNumber("rotations left", encFL.get());
+		SmartDashboard.putNumber("rotations right", encFR.get());
+		SmartDashboard.putNumber("back left", encBL.get());
+		SmartDashboard.putNumber("back right", encBR.get());
 	}
 	//drive motor controller constructors
 	

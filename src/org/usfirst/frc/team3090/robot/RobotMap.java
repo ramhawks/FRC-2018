@@ -28,18 +28,18 @@ public class RobotMap {
 	public static final int claw_right = 1;			//winch speed pos or neg
 													public static final double winch_speed = 1;
 	//robot drive motor controllers
-	public static final int talonFL = 13;			//auto-run distance
-	public static final int talonFR = 10;			public static final double auto_inches = 120;
-	public static final int talonBL = 11;
-	public static final int talonBR = 12;			public static final double drive_speed = .8;
+	public static final int talonFL = 13;			//auto-run commands
+	public static final int talonFR = 10;			public static final double run_seconds = 3;
+	public static final int talonBL = 11;			public static final double run_speed = .6;
+	public static final int talonBR = 12;			
 	
-	//robot other motor controllers
-	public static final int scissor_chain = 9;
+	//robot other motor controllers					//teleop drive speed
+	public static final int scissor_chain = 9;		public static final double drive_speed = .8;
 	public static final int winch_motor = 15;
 	
 	//encoders
 	public static final int encFL_a = 0;
-	public static final int encFL_b = 1;
+	public static final int encFL_b = 1;			public static final double auto_inches = 120;
 	public static final int encFR_a = 2;
 	public static final int encFR_b = 3;
 	public static final int encBL_a = 4;

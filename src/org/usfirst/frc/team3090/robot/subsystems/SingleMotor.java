@@ -25,7 +25,7 @@ public class SingleMotor extends Subsystem {
 	//Spark motor = new Spark(RobotMap.spark2);
 	
 	//make the encoder
-	Encoder howSpinny = new Encoder(8, 9, false, Encoder.EncodingType.k4X);
+	public Encoder howSpinny = new Encoder(8, 9, false, Encoder.EncodingType.k4X);
 
 	//make a timer
 	Timer SMClock = new Timer();
