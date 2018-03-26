@@ -33,12 +33,14 @@ public class Robot extends TimedRobot {
 	//subsystems
 	public static final SingleMotor singleMotor = new SingleMotor();
 	public static final MainDrive mainDrive = new MainDrive();
+	
 	//public static final TestTheStupidNoWorkyMotorsUgh stupidUgh = new TestTheStupidNoWorkyMotorsUgh();
 	
 	//public static final Sensors sensors = new Sensors();
 	public static final Claw claw = new Claw();
 	public static final Winch winch = new Winch();
 	public static final Scissors scissors = new Scissors();
+	public static final Forklift forklift = new Forklift();
 	
 	////////*****ALWAYS INIT OI AFTER SUBSYSTEMS*******///////
 	public static final OI OI = new OI();

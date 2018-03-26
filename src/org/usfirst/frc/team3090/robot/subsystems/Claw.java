@@ -2,6 +2,7 @@ package org.usfirst.frc.team3090.robot.subsystems;
 
 import org.usfirst.frc.team3090.robot.RobotMap;
 
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
@@ -10,22 +11,23 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class Claw extends Subsystem {
 	
-	Spark left = new Spark(RobotMap.claw_left);
-	Spark right = new Spark(RobotMap.claw_right);
+	DoubleSolenoid clawPiston = new DoubleSolenoid(1, 0, 1);
 
     public void initDefaultCommand() {
         // Set the default command for a subsystem here
         //setDefaultCommand(new MySpecialCommand());
     }
     
+    public void pistonNeutral(){
+    	clawPiston.set(DoubleSolenoid.Value.kOff);
+    }
+    
     public void suckIn(double speedIn){
-    	left.set(speedIn);
-    	right.set(speedIn * -1);
+    	clawPiston.set(DoubleSolenoid.Value.kForward);
     }
     
     public void spitOut(double speedOut){
-    	left.set(speedOut * -1);
-    	right.set(speedOut);
+    	clawPiston.set(DoubleSolenoid.Value.kReverse);
     }
     
 }

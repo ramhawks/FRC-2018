@@ -36,6 +36,7 @@ public class RobotMap {
 	//robot other motor controllers					//teleop drive speed
 	public static final int scissor_chain = 9;		public static final double drive_speed = .8;
 	public static final int winch_motor = 15;
+	public static final int forklift_motor = 14;	public static final double forklift_speed = .5;
 	
 	//encoders
 	public static final int encFL_a = 0;
@@ -46,4 +47,7 @@ public class RobotMap {
 	public static final int encBL_b = 5;
 	public static final int encBR_a = 6;
 	public static final int encBR_b = 7;
+	
+	//claw pneumatics
+	public static final int claw_piston = 1;
 }

@@ -50,8 +50,10 @@ public class OI {
 	}*/
 	
 	public OI(){
-		clawIn_.whileHeld(new ClawIn());
-		clawOut_.whileHeld(new ClawOut());
+		clawIn_.whenPressed(new ClawIn());
+		clawOut_.whenPressed(new ClawOut());
+		scissorsUp_.whileHeld(new ForkliftUp());
+		scissorsDown_.whileHeld(new ForkliftDown());
 	}
 	
 	public void warning(String mark){

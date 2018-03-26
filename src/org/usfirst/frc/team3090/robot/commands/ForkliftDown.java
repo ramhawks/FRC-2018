@@ -8,10 +8,10 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class ClawIn extends Command {
+public class ForkliftDown extends Command {
 
-    public ClawIn() {
-        requires(Robot.claw);
+    public ForkliftDown() {
+        requires(Robot.forklift);
     }
 
     // Called just before this Command runs the first time
@@ -20,7 +20,7 @@ public class ClawIn extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.claw.suckIn(RobotMap.claw_in_speed);
+    	Robot.forklift.forkliftDown(RobotMap.forklift_speed);
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -30,12 +30,12 @@ public class ClawIn extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.claw.pistonNeutral();
+    	Robot.forklift.forkliftUp(0);
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-    	Robot.claw.pistonNeutral();
+    	Robot.forklift.forkliftUp(0);
     }
 }
