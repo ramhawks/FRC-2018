@@ -34,7 +34,7 @@ public class Robot extends TimedRobot {
 	//public static final SingleMotor singleMotor = new SingleMotor();
 	public static final MainDrive mainDrive = new MainDrive();
 
-	//public static final TestTheStupidNoWorkyMotorsUgh stupidUgh = new TestTheStupidNoWorkyMotorsUg(
+	//public static final TestTheStupidNoWorkyMotorsUgh stupidUgh 
 	
 	//public static final Sensors sensors = new Sensors();
 	public static final Claw claw = new Claw();
