@@ -22,7 +22,7 @@ public class JeffDrive extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.mainDrive.jeffDrive(-Robot.OI.controllerd.getRawAxis(1) * RobotMap.drive_speed, Robot.OI.controllerd.getRawAxis(4));
+    	Robot.mainDrive.jeffDrive(-Robot.OI.controllerd.getRawAxis(1) * RobotMap.drive_speed, Robot.OI.controllerd.getRawAxis(4) * RobotMap.drive_speed);
     }
 
     // Make this return true when this Command no longer needs to run execute(

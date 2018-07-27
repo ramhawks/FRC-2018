@@ -22,10 +22,10 @@ public class RightLine extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	while(Robot.mainDrive.encBL.get() < Robot.OI.inchToEnc(RobotMap.auto_inches) || Robot.mainDrive.encFL.get() < Robot.OI.inchToEnc(RobotMap.auto_inches)){
+    	//while(Robot.mainDrive.encBL.get() < Robot.OI.inchToEnc(RobotMap.auto_inches) || Robot.mainDrive.encFL.get() < Robot.OI.inchToEnc(RobotMap.auto_inches)){
     		Robot.mainDrive.jeffDrive(RobotMap.run_speed, 0);
     		Robot.OI.warning("Right Line - Driving Forward");
-    	}
+    	//}
     	Robot.mainDrive.jeffDrive(0, 0);
     	Robot.OI.warning("Right Line - Stopping");
     }

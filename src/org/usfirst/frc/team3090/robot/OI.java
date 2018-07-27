@@ -7,7 +7,7 @@
 
 package org.usfirst.frc.team3090.robot;
 
-import org.usfirst.frc.team3090.robot.commands.SpinMotor;
+//import org.usfirst.frc.team3090.robot.commands.SpinMotor;
 import org.usfirst.frc.team3090.robot.commands.automodes.*;
 import org.usfirst.frc.team3090.robot.commands.*;
 
@@ -35,7 +35,13 @@ public class OI {
 	private JoystickButton 	clawIn_ = new JoystickButton(controllerd, 2),
 	  						clawOut_ = new JoystickButton(controllerd, 3),
 	  						scissorsUp_ = new JoystickButton(controllerd, 4),
-	  						scissorsDown_ = new JoystickButton(controllerd, 1);
+	  						scissorsDown_ = new JoystickButton(controllerd, 1),
+							forkliftUp_ = new JoystickButton(controllerd, 4),
+							forkliftDown_ = new JoystickButton(controllerd, 1),
+							forkliftUp_o = new JoystickButton(controllero, 4),
+							forkliftDown_o = new JoystickButton(controllero, 1),
+							clawIn_o = new JoystickButton(controllero, 2),
+							clawOut_o = new JoystickButton(controllero, 3);
 	
 	/*public void incrementation(double increment, double min, double max){
 		
@@ -52,24 +58,33 @@ public class OI {
 	public OI(){
 		clawIn_.whenPressed(new ClawIn());
 		clawOut_.whenPressed(new ClawOut());
-		scissorsUp_.whileHeld(new ForkliftUp());
-		scissorsDown_.whileHeld(new ForkliftDown());
+		
+		if (!Robot.forklift.limitUp.get()){
+			forkliftUp_.whileHeld(new ForkliftUp());
+			forkliftUp_o.whileHeld(new ForkliftUp());
+		}
+		
+		forkliftDown_.whileHeld(new ForkliftDown());
+		forkliftUp_o.whileHeld(new ForkliftUp());
+		forkliftDown_o.whileHeld(new ForkliftDown());
+		clawIn_o.whenPressed(new ClawIn());
+		clawOut_o.whenPressed(new ClawOut());
 	}
 	
 	public void warning(String mark){
-		DriverStation.reportWarning(mark, true);
+		//DriverStation.reportWarning(mark, true);
 	}
 	
 	public void autoQuery(String start, String end){
 		switch(start + end){
 		case "1Scale": Robot.autoCommand = new LeftScale(); break;
 		case "1Switch": Robot.autoCommand = new LeftSwitch(); break;
-		case "1Line": Robot.autoCommand = new LeftLine(); break;
+		case "1Line": Robot.autoCommand = new CenterLine(); break;
 		case "2Switch": Robot.autoCommand = new CenterSwitch(); break;
 		case "2Line":  Robot.autoCommand = new CenterLine(); break;
 		case "3Scale":  Robot.autoCommand = new RightScale(); break;
 		case "3Switch": Robot.autoCommand =  new RightSwitch(); break;
-		case "3Line": Robot.autoCommand =  new RightLine(); break;
+		case "3Line": Robot.autoCommand =  new CenterLine(); break;
 		default: Robot.autoCommand =  new NullAuto();
 		}
 	}

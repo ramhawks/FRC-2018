@@ -29,16 +29,16 @@ public class RobotMap {
 													public static final double winch_speed = 1;
 	//robot drive motor controllers
 	public static final int talonFL = 13;			//auto-run commands
-	public static final int talonFR = 10;			public static final double run_seconds = 3;
-	public static final int talonBL = 11;			public static final double run_speed = .6;
+	public static final int talonFR = 10;			public static final double run_seconds = 5;
+	public static final int talonBL = 11;			public static final double run_speed = .6;	//do not exceed 1
 	public static final int talonBR = 12;			
 	
-	//robot other motor controllers					//teleop drive speed
-	public static final int scissor_chain = 9;		public static final double drive_speed = .8;
-	public static final int winch_motor = 15;
-	public static final int forklift_motor = 14;	public static final double forklift_speed = .5;
+	//robot other motor controllers					//teleop drive spee
+	/*public static final int scissor_chain = 9;*/		public static final double drive_speed = 1;
+	public static final int winch_motor = 14;
+	public static final int forklift_motor = 15;	public static final double forklift_speed = .85;
 	
-	//encoders
+	//encoder
 	public static final int encFL_a = 0;
 	public static final int encFL_b = 1;			public static final double auto_inches = 120;
 	public static final int encFR_a = 2;
@@ -49,5 +49,10 @@ public class RobotMap {
 	public static final int encBR_b = 7;
 	
 	//claw pneumatics
-	public static final int claw_piston = 1;
+	public static final int claw_forward = 0;
+	public static final int claw_backward = 1;
+	
+	//limit switches
+	public static final int limit_up = 9;
+	//public static final int limit_down = 8
 }

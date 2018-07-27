@@ -22,10 +22,10 @@ public class LeftLine extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	while(Robot.mainDrive.encBL.get() < Robot.OI.inchToEnc(RobotMap.auto_inches) || Robot.mainDrive.encFL.get() < Robot.OI.inchToEnc(RobotMap.auto_inches)){
+    	//while(Robot.mainDrive.encBL.get() < Robot.OI.inchToEnc(RobotMap.auto_inches) || Robot.mainDrive.encFL.get() < Robot.OI.inchToEnc(RobotMap.auto_inches)){
     		Robot.mainDrive.jeffDrive(.6, 0);
-    		Robot.OI.warning("Left Line - Driving Forward");
-    	}
+    		//Robot.OI.warning("Left Line - Driving Forward");
+    	//}
     	Robot.mainDrive.jeffDrive(0, 0);
     	Robot.OI.warning("Left Line - Stopping");
     }

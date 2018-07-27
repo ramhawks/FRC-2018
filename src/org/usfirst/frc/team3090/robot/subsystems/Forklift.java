@@ -4,6 +4,7 @@ import org.usfirst.frc.team3090.robot.RobotMap;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -12,18 +13,23 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class Forklift extends Subsystem {
 
     WPI_TalonSRX forkliftMotor = new WPI_TalonSRX(RobotMap.forklift_motor);
+    public DigitalInput limitUp = new DigitalInput(RobotMap.limit_up);
+    //DigitalInput limitDown = new DigitalInput(RobotMap.limit_down)
 
     public void initDefaultCommand() {
-        // Set the default command for a subsystem here.
-        //setDefaultCommand(new MySpecialCommand());
+        
     }
     
     public void forkliftUp(double speed){
-    	forkliftMotor.set(speed);
+    	
+    	//if(!limitUp.get()){
+    		forkliftMotor.set(speed);
+    	//}
     }
     
     public void forkliftDown(double speed){
-    	forkliftMotor.set(-speed);
+    	//if(!limitDown.get()){
+    		forkliftMotor.set(-speed);
+    	//}
     }
 }
-

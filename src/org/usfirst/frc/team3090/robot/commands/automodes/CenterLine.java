@@ -30,9 +30,9 @@ public class CenterLine extends Command {
     
     	while(Robot.mainDrive.driveClock.get() < RobotMap.run_seconds){
     		Robot.mainDrive.jeffDrive(RobotMap.run_speed, 0);
-    		Robot.OI.warning("Center Line - Driving forward");
-    		SmartDashboard.putNumber("Encoder", Robot.mainDrive.encFL.get());
-    		SmartDashboard.putNumber("Encoder", Robot.mainDrive.encFR.get());
+    		//Robot.OI.warning("Center Line - Driving forward")
+    		//SmartDashboard.putNumber("Encoder", Robot.mainDrive.encFL.get())
+    		//SmartDashboard.putNumber("Encoder", Robot.mainDrive.encFR.get())
     		SmartDashboard.putNumber("timer", Robot.mainDrive.driveClock.get());
     	}
     	Robot.mainDrive.jeffDrive(0, 0);

@@ -31,15 +31,15 @@ public class Robot extends TimedRobot {
 	public String plates;
 	
 	//subsystems
-	public static final SingleMotor singleMotor = new SingleMotor();
+	//public static final SingleMotor singleMotor = new SingleMotor();
 	public static final MainDrive mainDrive = new MainDrive();
-	
-	//public static final TestTheStupidNoWorkyMotorsUgh stupidUgh = new TestTheStupidNoWorkyMotorsUgh();
+
+	//public static final TestTheStupidNoWorkyMotorsUgh stupidUgh = new TestTheStupidNoWorkyMotorsUg(
 	
 	//public static final Sensors sensors = new Sensors();
 	public static final Claw claw = new Claw();
-	public static final Winch winch = new Winch();
-	public static final Scissors scissors = new Scissors();
+	//public static final Winch winch = new Winch();
+	//public static final Scissors scissors = new Scissors();
 	public static final Forklift forklift = new Forklift();
 	
 	////////*****ALWAYS INIT OI AFTER SUBSYSTEMS*******///////
@@ -56,7 +56,7 @@ public class Robot extends TimedRobot {
 	 */
 	@Override
 	public void robotInit() {
-		SmartDashboard.putData("Spin Motor", new SpinMotor());
+		//SmartDashboard.putData("Spin Motor", new SpinMotor());
 		SmartDashboard.putData(claw);
 		SmartDashboard.putData(mainDrive);
 		SmartDashboard.putData("Seperate Motors", new SeperateMotors());

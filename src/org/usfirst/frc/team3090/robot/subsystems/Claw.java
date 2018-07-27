@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class Claw extends Subsystem {
 	
-	DoubleSolenoid clawPiston = new DoubleSolenoid(1, 0, 1);
+	DoubleSolenoid clawPiston = new DoubleSolenoid(1, RobotMap.claw_forward, RobotMap.claw_backward);
 
     public void initDefaultCommand() {
         // Set the default command for a subsystem here

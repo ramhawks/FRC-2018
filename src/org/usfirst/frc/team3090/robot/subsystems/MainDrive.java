@@ -28,10 +28,10 @@ public class MainDrive extends Subsystem {
 	private WPI_TalonSRX backRight;
 	
 	//right side inverted
-	public Encoder encFL = new Encoder(RobotMap.encFL_a, RobotMap.encFL_b, false, Encoder.EncodingType.k4X);
-	public Encoder encFR = new Encoder(RobotMap.encFR_a, RobotMap.encFR_b, true, Encoder.EncodingType.k4X);
-	public Encoder encBL = new Encoder(RobotMap.encBL_a, RobotMap.encBL_b, false, Encoder.EncodingType.k4X);
-	public Encoder encBR = new Encoder(RobotMap.encBR_a, RobotMap.encBR_b, true, Encoder.EncodingType.k4X);
+	//public Encoder encFL = new Encoder(RobotMap.encFL_a, RobotMap.encFL_b, false, Encoder.EncodingType.k4X);
+	//public Encoder encFR = new Encoder(RobotMap.encFR_a, RobotMap.encFR_b, true, Encoder.EncodingType.k4X);
+	//public Encoder encBL = new Encoder(RobotMap.encBL_a, RobotMap.encBL_b, false, Encoder.EncodingType.k4X);
+	//public Encoder encBR = new Encoder(RobotMap.encBR_a, RobotMap.encBR_b, true, Encoder.EncodingType.k4X);
 	
 	private MecanumDrive driveMain;
 	private DifferentialDrive tankDrive;
@@ -48,7 +48,7 @@ public class MainDrive extends Subsystem {
 			//frontRight.setInverted(true);
 			//backRight.setInverted(true);
 			
-			driveMain = new MecanumDrive(frontLeft, backLeft, frontRight, backRight);
+			//driveMain = new MecanumDrive(frontLeft, backLeft, frontRight, backRight);
 			tankDrive = new DifferentialDrive(leftSide, rightSide);
 		}
 		
@@ -72,18 +72,18 @@ public class MainDrive extends Subsystem {
 	
 	public void jeffDrive(double x, double turn){
 		tankDrive.arcadeDrive(x, turn);
-		SmartDashboard.putNumber("speed", Math.abs(x));
-		SmartDashboard.putNumber("rotations left", encFL.get());
-		SmartDashboard.putNumber("rotations right", encFR.get());
-		SmartDashboard.putNumber("back left", encBL.get());
-		SmartDashboard.putNumber("back right", encBR.get());
+		//SmartDashboard.putNumber("speed", Math.abs(x));
+		//SmartDashboard.putNumber("rotations left", encFL.get());
+		//SmartDashboard.putNumber("rotations right", encFR.get());
+		//SmartDashboard.putNumber("back left", encBL.get());
+		//SmartDashboard.putNumber("back right", encBR.get());
 	}
 	//drive motor controller constructors
 	
 	
 
     public void initDefaultCommand() {
-        setDefaultCommand(new JeffDrive());
+        setDefaultCommand(new JeffDrive());	//this is what drive mode will be running
     }
     
     public void seperateMotors(boolean inFL, boolean inFR, boolean inBL, boolean inBR){
@@ -102,10 +102,10 @@ public class MainDrive extends Subsystem {
     }
     
     public void resetEncoders(){
-    	encFL.reset();
-    	encFR.reset();
-    	encBL.reset();
-    	encBR.reset();
+    	//encFL.reset();
+    	//encFR.reset();
+    	//encBL.reset();
+    	//encBR.reset();
     }
 }
 
